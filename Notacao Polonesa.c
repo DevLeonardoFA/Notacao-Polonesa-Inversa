@@ -53,7 +53,7 @@ int main(void){
         }
         else{
             //verifica se é um sinal
-            if(code_after[i] == '/' || code_after[i] == '+' || code_after[i] == '-' || code_after[i] == '*' || 
+            if(code_after[i] == '/' || code_after[i] == '+' || code_after[i] == '-' || code_after[i] == '*' ||
                code_after[i] == '%' || code_after[i] == '<' || code_after[i] == '>' || code_after[i] == '.'){
                 elementos(code_after[i]);
             }
@@ -78,7 +78,15 @@ int main(void){
     reverse();
     strcat(code_before, aux);
     system("cls");
-    
+
+    int tetoechao = strlen(code_after) + 27;
+    char tetoechao2[100];
+    for(int p = 0; p <= tetoechao; p++){
+        strcat(tetoechao2, "-");
+    }
     //mostra o resultado
-    printf(" %s --> %s", code_after, code_before);
+    printf("%s \n", tetoechao2);
+    printf("|| Codigo Digitado:   %s \n", code_after);
+    printf("|| Codigo Processado: %s \n", code_before);
+    printf("%s \n", tetoechao2);
 }

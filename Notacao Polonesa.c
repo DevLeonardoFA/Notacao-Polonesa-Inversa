@@ -79,11 +79,13 @@ int main(void){
     strcat(code_before, aux);
     system("cls");
 
+    //fazendo os traços do teto e do chão no visual final
     int tetoechao = strlen(code_after) + 27;
     char tetoechao2[100];
     for(int p = 0; p <= tetoechao; p++){
         strcat(tetoechao2, "-");
     }
+
     //mostra o resultado
     printf("%s \n", tetoechao2);
     printf("|| Codigo Digitado:   %s \n", code_after);

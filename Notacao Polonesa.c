@@ -7,6 +7,7 @@
 char code_after[20], code_before[20] = "", espera[20] = "", aux[20] = "";
 int a = NULL, b = NULL;
 
+//função para inverter os itens que estão em espera
 void reverse(){
     a = 0;
     for(b = strlen(espera) - 1; b >= 0; b--){
@@ -15,6 +16,7 @@ void reverse(){
     }
     aux[a] = '\0';
 }
+// não conseguia fazer strcat(code_before, code_after[x]); então fiz essa função (não gostei de fazer dessa forma)
 void letras(char a){
     switch(a){
         case 'a': strcat(code_before, "a"); break; case 'b': strcat(code_before, "b"); break; case 'c': strcat(code_before, "c"); break;
@@ -28,28 +30,37 @@ void letras(char a){
         case 'y': strcat(code_before, "y"); break; case 'z': strcat(code_before, "z"); break;
     }
 }
+//mesma coisa que a função anterior
 void elementos(char a){
     switch(a){
         case '+': strcat(espera, "+"); break; case '/': strcat(espera, "/"); break; case '*': strcat(espera, "*"); break;
-        case '-': strcat(espera, "-"); break;
+        case '-': strcat(espera, "-"); break; case '>': strcat(espera, ">"); break; case '<': strcat(espera, "<"); break;
+        case '%': strcat(espera, "%"); break; case '.': strcat(espera, "."); break;
     }
 }
 
 int main(void){
 
+    //iniciando pedindo o código
     printf("\n Digite um codigo: ");
     scanf("%s", code_after);
 
+    //for verificando cada elemento da frase
     for(int i = 0; code_after[i] != '\0'; i++){
+        //verifica se é letra
         if(isalpha(code_after[i])){
             letras(code_after[i]);
         }
         else{
-            if(code_after[i] == '/' || code_after[i] == '+' || code_after[i] == '-' || code_after[i] == '*' || code_after[i] == '%'){
+            //verifica se é um sinal
+            if(code_after[i] == '/' || code_after[i] == '+' || code_after[i] == '-' || code_after[i] == '*' || 
+               code_after[i] == '%' || code_after[i] == '<' || code_after[i] == '>' || code_after[i] == '.'){
                 elementos(code_after[i]);
             }
             else{
+                //verifica se está fechando o parenteses
                 if(code_after[i] == ')'){
+                    //inverte e add o que estiver na espera
                     reverse();
                     strcat(code_before, aux);
                     for(int y = 0; aux[y] != '\0'; y++){\
@@ -57,13 +68,17 @@ int main(void){
                         espera[y] = ' ';
                     }
                 }
+                //se não for nada dos outros só ignora
                 else{
                 }
             }
         }
     }
+    //inverte e add o resto que estiver na espera
     reverse();
     strcat(code_before, aux);
-
-    printf(" %s", code_before);
+    system("cls");
+    
+    //mostra o resultado
+    printf(" %s --> %s", code_after, code_before);
 }

@@ -1,4 +1,4 @@
-# Notacao-Polonesa-Inversa
+# Notacao Polonesa Inversa
 Trabalho em C para matéria de Estrutura de Dados da Faculdade de Tecnologia de Americana
 
 <p><b>Notação Polonesa Inversa<b> foi criada para habilitar armazenamento de memória de endereço zero. Ela deriva da notação polonesa, 
@@ -18,5 +18,4 @@ matemáticas. Não é muito usado na matemática convencional, mas muito usado n
 <b>fontes de pesquisa:</b>
   - https://pt.wikipedia.org/wiki/Nota%C3%A7%C3%A3o_polonesa
   - http://waltenomartins.com.br/algdados_apostila_pilhafila.pdf
-  - https://pt.wikipedia.org/wiki/Notação_polonesa
-  todos vistos no dia 30 do mês de outubro de 2019
+  - https://pt.wikipedia.org/wiki/Notação_polonesa <br> todos vistos no dia 30 do mês de outubro de 2019

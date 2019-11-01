@@ -1,4 +1,5 @@
 //Feito por: Leonardo Fernandes Alonso
+//está versão não usa pilha
 
 #include <stdio.h>
 #include <string.h>

@@ -77,7 +77,6 @@ int main(void){
     //inverte e add o resto que estiver na espera
     reverse();
     strcat(code_before, aux);
-    system("cls");
 
     //fazendo os traços do teto e do chão no visual final
     int tetoechao = strlen(code_after) + 27;
